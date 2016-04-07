@@ -13,3 +13,85 @@
 */
 
 /*twentysixteen styles are enqued using functions.php*/
+
+/*MAIN CONTENT STYLING*/
+.site-main {
+    margin: 0 4% 3.5em 4%;
+}
+
+/*REDO LAYOUT ON SINGLE POST*/
+.single #main .entry-header{
+    
+}
+
+.single #main .entry-summary{
+    
+}
+
+.single #main .entry-content{
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    max-width: 60em;
+}
+
+.single #main .entry-footer{
+    float: none;
+}
+
+
+/*HEADER STYLING*/
+.no-sidebar .entry-header, .no-sidebar .entry-content, .no-sidebar .entry-summary, .no-sidebar .entry-footer, .no-sidebar .comments-area, .no-sidebar .image-navigation, .no-sidebar .post-navigation, .no-sidebar .pagination, .no-sidebar .page-header, .no-sidebar .page-content, .no-sidebar .content-bottom-widgets {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+
+/*FOOTER STYLING*/
+
+/*keep it inline block*/
+.archive-main .entry-footer > span:not(:last-child):after {
+    content: "\002f";
+    display: inline-block;
+    opacity: 0.7;
+    padding: 0 0.538461538em;
+}
+
+/*this is to remove the fact that the main theme removes the single, line styling and added / marks at large sizes which I want to keep in*/
+@media screen and (min-width: 61.5625em){
+    body:not(.search-results) article:not(.type-page) .entry-footer > span:not(:last-child):after {
+        display: inline;
+    }
+    body:not(.search-results) article:not(.sticky) .posted-on, body:not(.search-results) .cat-links, body:not(.search-results) article:not(.type-page) .entry-footer > .edit-link {
+        display: inline-block;
+        margin-bottom: 0.5384615385em;
+    }
+}
+
+/*remove the small width (our footer goes allof the way across the containing element)*/
+body.no-sidebar:not(.search-results) article:not(.type-page) .entry-footer {
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+}
+
+/* Allow entry-footer to span as wide as it  needs */
+@media screen and (min-width: 61.5625em){
+    body:not(.search-results) article:not(.type-page) .entry-footer {
+        width: 100%;
+    }
+}
+
+
+/* Allow post thumbnail image all the way across. this is needed to get rid of the odd 23.0769% that twentysixteen adds. I wish I didn't have to specify a number but don't see any other way around */
+.entry-header, .post-thumbnail, .entry-content, .entry-summary, .entry-footer, .comments-area, .image-navigation, .post-navigation, .page-header, .page-content, .content-bottom-widgets {
+     margin-right: 7.6923% ; /* copied from .post-thumbnail margin */
+}
+
+/*Responsive image*/
+img.attachment-post-thumbnail.size-post-thumbnail.wp-post-image {
+    max-width: 100%;
+}
+
+
